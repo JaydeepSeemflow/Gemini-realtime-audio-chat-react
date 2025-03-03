@@ -100,7 +100,7 @@ export class MultimodalLiveClient extends EventEmitter<MultimodalLiveClientEvent
 
   connect(config: LiveConfig): Promise<boolean> {
     const socket = io(
-      "https://dc8b-2405-201-201c-4870-3426-3506-35e5-2e74.ngrok-free.app?user_id=0f115525-2879-4854-bbb6-98f2f65eca8c&mode=STANDARD&is_ai_first=true"
+      "https://her-ai.onrender.com?user_id=0f115525-2879-4854-bbb6-98f2f65eca8c&mode=STANDARD&is_ai_first=true"
     );
 
     socket.on("message", async (d) => {
@@ -119,10 +119,11 @@ export class MultimodalLiveClient extends EventEmitter<MultimodalLiveClientEvent
         console.log("connected JP!");
         this.emit(
           "log",
-          this.createStreamingLog("client.connect", "connected to socket")
+          this.createStreamingLog("client.connect", "SOCKET CONNECTED")
         );
 
         this.emit("open");
+        this.emit("log", this.createStreamingLog("client.open", "OPEN SOCKET"));
         this.socket = socket;
 
         resolve(true);
