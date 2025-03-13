@@ -77,7 +77,7 @@ export class MultimodalLiveClient extends EventEmitter<MultimodalLiveClientEvent
   constructor({ url, apiKey }: MultimodalLiveAPIClientConnection) {
     super();
     this.url =
-      "https://her-ai.onrender.com?user_id=0f115525-2879-4854-bbb6-98f2f65eca8c&mode=STANDARD&is_ai_first=true";
+      "https://her-ai-backend.onrender.com?user_id=0f115525-2879-4854-bbb6-98f2f65eca8c&mode=STANDARD&is_ai_first=true";
     this.send = this.send.bind(this);
   }
 
